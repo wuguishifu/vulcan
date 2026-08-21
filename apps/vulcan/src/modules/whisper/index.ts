@@ -1,4 +1,5 @@
 export {
+  activeWhisperDownloads,
   cancelWhisperDownload,
   DEFAULT_WHISPER_MODEL,
   deleteWhisperModel,
@@ -15,6 +16,8 @@ export type {
   WhisperModelName,
   WhisperModelStatus,
 } from './models';
+export { useWhisperModels } from './use-whisper-models';
+export type { WhisperModelRow } from './use-whisper-models';
 export {
   killWhisper,
   listWhisperJobs,

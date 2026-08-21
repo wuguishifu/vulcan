@@ -322,6 +322,13 @@ async fn download_model(
   }
 }
 
+/// Models with a download currently in flight, so the UI can restore
+/// progress indicators after a page remount.
+#[tauri::command]
+pub fn whisper_active_downloads(state: State<'_, WhisperState>) -> Vec<String> {
+  state.downloads.lock().unwrap().keys().cloned().collect()
+}
+
 #[tauri::command]
 pub fn whisper_cancel_download(state: State<'_, WhisperState>, model: String) -> Result<(), String> {
   // Cancelling a download that isn't running is a no-op; the download task

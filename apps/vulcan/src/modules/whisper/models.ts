@@ -126,6 +126,11 @@ export function downloadWhisperModel(model: WhisperModelName): Promise<void> {
   return invoke('whisper_download_model', { model });
 }
 
+/** Models with a download currently in flight. */
+export function activeWhisperDownloads(): Promise<WhisperModelName[]> {
+  return invoke('whisper_active_downloads');
+}
+
 export function cancelWhisperDownload(model: WhisperModelName): Promise<void> {
   return invoke('whisper_cancel_download', { model });
 }

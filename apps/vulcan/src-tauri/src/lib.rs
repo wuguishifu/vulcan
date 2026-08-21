@@ -21,6 +21,7 @@ pub fn run() {
       whisper::whisper_running,
       whisper::whisper_list_models,
       whisper::whisper_download_model,
+      whisper::whisper_active_downloads,
       whisper::whisper_cancel_download,
       whisper::whisper_delete_model
     ])

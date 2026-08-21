@@ -1,7 +1,12 @@
+'use client';
+
+import { TranscriptionModels } from './transcription-models';
+
 export default function Settings() {
   return (
-    <main>
-      <h1>Settings</h1>
+    <main className="mx-auto w-full max-w-3xl space-y-8">
+      <h1 className="text-2xl font-semibold">Settings</h1>
+      <TranscriptionModels />
     </main>
   );
 }
