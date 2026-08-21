@@ -1,3 +1,7 @@
 export default function Index() {
-  return <main>hello world</main>;
+  return (
+    <main>
+      <h1>Home</h1>
+    </main>
+  );
 }
