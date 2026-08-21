@@ -9,9 +9,15 @@ catalogs:
     '@base-ui/react':
       specifier: ^1.7.0
       version: 1.7.0
+    '@reduxjs/toolkit':
+      specifier: ^2.9.0
+      version: 2.12.0
     '@tailwindcss/postcss':
       specifier: ^4.3.3
       version: 4.3.3
+    '@tauri-apps/plugin-store':
+      specifier: ^2.4.0
+      version: 2.4.4
     class-variance-authority:
       specifier: ^0.7.1
       version: 0.7.1
@@ -33,6 +39,12 @@ catalogs:
     react-dom:
       specifier: ^19.0.0
       version: 19.2.8
+    react-redux:
+      specifier: ^9.2.0
+      version: 9.3.0
+    redux-persist:
+      specifier: ^6.0.0
+      version: 6.0.0
     shadcn:
       specifier: ^4.19.0
       version: 4.19.0
@@ -134,6 +146,12 @@ importers:
       '@base-ui/react':
         specifier: 'catalog:'
         version: 1.7.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@reduxjs/toolkit':
+        specifier: 'catalog:'
+        version: 2.12.0(react-redux@9.3.0(@types/react@19.2.18)(react@19.2.8)(redux@5.0.1))(react@19.2.8)
+      '@tauri-apps/plugin-store':
+        specifier: 'catalog:'
+        version: 2.4.4
       class-variance-authority:
         specifier: 'catalog:'
         version: 0.7.1
@@ -152,6 +170,12 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 19.2.8(react@19.2.8)
+      react-redux:
+        specifier: 'catalog:'
+        version: 9.3.0(@types/react@19.2.18)(react@19.2.8)(redux@5.0.1)
+      redux-persist:
+        specifier: 'catalog:'
+        version: 6.0.0(react@19.2.8)(redux@5.0.1)
       shadcn:
         specifier: 'catalog:'
         version: 4.19.0(babel-plugin-macros@3.1.0)(typescript@6.0.3)
@@ -1659,6 +1683,17 @@ packages:
     peerDependencies:
       typescript: '>3.0.0'
 
+  '@reduxjs/toolkit@2.12.0':
+    resolution: {integrity: sha512-KiT+RzZbp6mQET+Mg+h2c97+9j1sNflUxQkIHI7Yuzf6Peu+OYpmkn6nbHWmLLWj+1ZODUJFwGZ7gx3L9R9EOw==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18 || ^19
+      react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+
   '@rolldown/binding-android-arm-eabi@1.2.5':
     resolution: {integrity: sha512-DLe/i+l8ynIBY7XEQ191TeZvCoowIGa18R+dIV30GW7DiOtp74i/xX8hs8GUjW5ARV7VZuie3d6AumSmCwbeRA==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1923,6 +1958,12 @@ packages:
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
+
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0':
     resolution: {integrity: sha512-b9MIk7yhdS1pMCZM8VeNfUlSKVRhsHZNMl5O9SfaX0l0t5wjdgu4IDzGB8bpnGBBOjGST3rRFVsaaEtI4W6f7g==}
@@ -2198,6 +2239,9 @@ packages:
   '@tailwindcss/postcss@4.3.3':
     resolution: {integrity: sha512-JTSZZGQi1AyKirbLN3azmjVzef92tcX7h+iSqPdaeStyFpGpDlKvvpxeOE8njhbUanbRwr3z8DyzhICWnMtQeg==}
 
+  '@tauri-apps/api@2.11.1':
+    resolution: {integrity: sha512-M2FPuYND2m+wh5hfW9ZpSdxMPdEJovPBWwoHJmwUpysTYNHaOkVFN419m/K0LIgjb/7KU2vBgsUepJWugQCvAA==}
+
   '@tauri-apps/cli-darwin-arm64@2.11.4':
     resolution: {integrity: sha512-1ryOF3ZhpZ/nemHV5zVwBQBz9jDGKmKPvWPADOhc83ig0P4bMc2iER4NbC6r9sjeIZ6RVQ4g3RZIYvezhcl4TQ==}
     engines: {node: '>= 10'}
@@ -2269,6 +2313,9 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
+  '@tauri-apps/plugin-store@2.4.4':
+    resolution: {integrity: sha512-oxSMaj/QpVfJcBMYX5aOQV94fWvga0MwQMfD6TLlbK2dh+ShPWAzefd8HWXhvOKjPRJdGVAkW7ZGO76JzzjaDA==}
+
   '@tokenizer/inflate@0.4.1':
     resolution: {integrity: sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==}
     engines: {node: '>=18'}
@@ -2334,6 +2381,9 @@ packages:
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@types/use-sync-external-store@0.0.6':
+    resolution: {integrity: sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==}
 
   '@types/validate-npm-package-name@4.0.2':
     resolution: {integrity: sha512-lrpDziQipxCEeK5kWxvljWYhUvOiB2A9izZd9B2AFarYAkqZshb4lPbRs7zKEic6eGtH8V/2qJW+dPp9OtF6bw==}
@@ -4154,6 +4204,9 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
+  immer@11.1.18:
+    resolution: {integrity: sha512-EQyQtLiYW029lyoczMl/Hh4Xu7cDecSc58JRYpHyL4tIAu3eqd1yJzQX04d2BZHDkzFFvm6qJEJWOtfDSWAXbQ==}
+
   immutable@5.1.9:
     resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
 
@@ -5545,6 +5598,18 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
+  react-redux@9.3.0:
+    resolution: {integrity: sha512-KQopgqFo/p/fgmAs5qz6p5RWaNAzq40WAu7fJIXnQpYxFPbJYtsJPWvGeF2rOBaY/kEuV77AVsX8TsQzKm+A/g==}
+    peerDependencies:
+      '@types/react': ^18.2.25 || ^19
+      react: ^18.0 || ^19
+      redux: ^5.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      redux:
+        optional: true
+
   react@19.2.8:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
@@ -5567,6 +5632,23 @@ packages:
   recast@0.23.21:
     resolution: {integrity: sha512-mFAyJq9vUbSTARLZUvAEf1z3YxlvAwswbmxMx2mPA/MSm4KmpwvwvhsH/NIrZhyOuwD60Lzyw2qh83uCbgTPYw==}
     engines: {node: '>= 4'}
+
+  redux-persist@6.0.0:
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+
+  redux-thunk@3.1.0:
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
+    peerDependencies:
+      redux: ^5.0.0
+
+  redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
 
   reflect.getprototypeof@1.0.10:
     resolution: {integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==}
@@ -8514,6 +8596,18 @@ snapshots:
       esquery: 1.7.0
       typescript: 6.0.3
 
+  '@reduxjs/toolkit@2.12.0(react-redux@9.3.0(@types/react@19.2.18)(react@19.2.8)(redux@5.0.1))(react@19.2.8)':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@standard-schema/utils': 0.3.0
+      immer: 11.1.18
+      redux: 5.0.1
+      redux-thunk: 3.1.0(redux@5.0.1)
+      reselect: 5.2.0
+    optionalDependencies:
+      react: 19.2.8
+      react-redux: 9.3.0(@types/react@19.2.18)(react@19.2.8)(redux@5.0.1)
+
   '@rolldown/binding-android-arm-eabi@1.2.5':
     optional: true
 
@@ -8688,6 +8782,10 @@ snapshots:
   '@sindresorhus/is@7.2.0': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
+
+  '@standard-schema/spec@1.1.0': {}
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0(@babel/core@7.29.7)':
     dependencies:
@@ -8956,6 +9054,8 @@ snapshots:
       postcss: 8.5.26
       tailwindcss: 4.3.3
 
+  '@tauri-apps/api@2.11.1': {}
+
   '@tauri-apps/cli-darwin-arm64@2.11.4':
     optional: true
 
@@ -9002,6 +9102,10 @@ snapshots:
       '@tauri-apps/cli-win32-arm64-msvc': 2.11.4
       '@tauri-apps/cli-win32-ia32-msvc': 2.11.4
       '@tauri-apps/cli-win32-x64-msvc': 2.11.4
+
+  '@tauri-apps/plugin-store@2.4.4':
+    dependencies:
+      '@tauri-apps/api': 2.11.1
 
   '@tokenizer/inflate@0.4.1':
     dependencies:
@@ -9078,6 +9182,8 @@ snapshots:
       csstype: 3.2.3
 
   '@types/resolve@1.20.2': {}
+
+  '@types/use-sync-external-store@0.0.6': {}
 
   '@types/validate-npm-package-name@4.0.2': {}
 
@@ -11273,6 +11379,8 @@ snapshots:
   image-size@0.5.5:
     optional: true
 
+  immer@11.1.18: {}
+
   immutable@5.1.9: {}
 
   import-fresh@3.3.1:
@@ -12668,6 +12776,15 @@ snapshots:
 
   react-is@16.13.1: {}
 
+  react-redux@9.3.0(@types/react@19.2.18)(react@19.2.8)(redux@5.0.1):
+    dependencies:
+      '@types/use-sync-external-store': 0.0.6
+      react: 19.2.8
+      use-sync-external-store: 1.6.0(react@19.2.8)
+    optionalDependencies:
+      '@types/react': 19.2.18
+      redux: 5.0.1
+
   react@19.2.8: {}
 
   read-cache@1.0.2: {}
@@ -12689,6 +12806,18 @@ snapshots:
       source-map: 0.6.1
       tiny-invariant: 1.3.3
       tslib: 2.8.1
+
+  redux-persist@6.0.0(react@19.2.8)(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+    optionalDependencies:
+      react: 19.2.8
+
+  redux-thunk@3.1.0(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+
+  redux@5.0.1: {}
 
   reflect.getprototypeof@1.0.10:
     dependencies:

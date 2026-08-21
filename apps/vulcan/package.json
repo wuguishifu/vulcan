@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "@base-ui/react": "catalog:",
+    "@reduxjs/toolkit": "catalog:",
+    "@tauri-apps/plugin-store": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "react-redux": "catalog:",
+    "redux-persist": "catalog:",
     "shadcn": "catalog:",
     "tailwind-merge": "catalog:",
     "tw-animate-css": "catalog:"

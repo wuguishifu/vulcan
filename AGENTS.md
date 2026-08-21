@@ -24,9 +24,11 @@
 
 ## Repo information
 
-- Developer dependencies should be added to the root level package.json
-- Production dependencies should be added to the pnpm-workspace.yaml catalog
-- When dependencies are added to apps or libs, use `catalog:` to prevent dependency duplication
+- Developer dependencies should be added to the root level package.json.
+- Production dependencies should be added to the pnpm-workspace.yaml catalog.
+- When dependencies are added to apps or libs, use `catalog:` to prevent dependency duplication.
+
+- Always run `nx typecheck <app/lib>` and `nx lint <app/lib>` and `nx format --all` after any code changes.
 
 ## App information
 
