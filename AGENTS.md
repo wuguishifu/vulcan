@@ -21,3 +21,11 @@
 - The `nx-generate` skill handles generator discovery internally - don't call nx_docs just to look up generator syntax
 
 <!-- nx configuration end-->
+
+## App information
+
+### Vulcan
+
+- Vulcan app is a desktop app backed by next.js and tauri. It uses tailwind css and shadcn.
+- Because it is a tauri app, there is no concept of a server or server components, so the root layout is marked as 'use client'.
+- To run Vulcan, use the command `nx serve vulcan` which will launch the dev server and build the tauri app.

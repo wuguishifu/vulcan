@@ -1,3 +1,5 @@
+'use client';
+
 import './globals.css';
 import { Nunito_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
