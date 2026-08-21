@@ -31,7 +31,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
-                    isActive={pathname === item.url}
+                    isActive={
+                      pathname === item.url ||
+                      (item.url !== '/' && pathname.startsWith(`${item.url}/`))
+                    }
                     render={<Link href={item.url} />}
                   >
                     <item.icon />

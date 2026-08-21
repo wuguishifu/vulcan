@@ -1,12 +1,15 @@
 'use client';
 
-import { TranscriptionModels } from './transcription-models';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
+// Static export (Tauri) has no server redirects, so forward on the client.
 export default function Settings() {
-  return (
-    <main className="mx-auto w-full max-w-3xl space-y-8">
-      <h1 className="text-2xl font-semibold">Settings</h1>
-      <TranscriptionModels />
-    </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/settings/api-token');
+  }, [router]);
+
+  return null;
 }

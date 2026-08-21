@@ -22,9 +22,11 @@ export default function RootLayout({
       <body>
         <StoreProvider>
           <TooltipProvider>
-            <SidebarProvider>
+            <SidebarProvider className="h-svh overflow-hidden">
               <AppSidebar />
-              <SidebarInset className="px-2 py-4">{children}</SidebarInset>
+              <SidebarInset className="overflow-y-auto px-2 py-4">
+                {children}
+              </SidebarInset>
             </SidebarProvider>
           </TooltipProvider>
         </StoreProvider>
