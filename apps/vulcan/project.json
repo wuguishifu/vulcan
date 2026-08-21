@@ -1,10 +1,10 @@
 {
-  "name": "Vulcan",
+  "name": "vulcan",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/vulcan",
   "projectType": "application",
   "tags": ["scope:client"],
-  "// targets": "to see all targets run: nx show project Vulcan --web",
+  "// targets": "to see all targets run: nx show project vulcan --web",
   "targets": {
     "clean": {
       "executor": "nx:run-commands",
