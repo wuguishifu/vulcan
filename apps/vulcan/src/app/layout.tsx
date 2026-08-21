@@ -1,8 +1,8 @@
 import './globals.css';
-import { Nunito_Sans } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Nunito_Sans } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
-const nunitoSans = Nunito_Sans({subsets:['latin'],variable:'--font-sans'});
+const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata = {
   title: 'Welcome to Vulcan',
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("font-sans", nunitoSans.variable)}>
+    <html lang="en" className={cn('font-sans', nunitoSans.variable)}>
       <body>{children}</body>
     </html>
   );
