@@ -9,10 +9,12 @@ import {
   persistReducer,
   persistStore,
 } from 'redux-persist';
+import { sessionReducer } from '@/modules/session/session-slice';
 import { settingsReducer } from '@/modules/settings/settings-slice';
 import { tauriStorage } from './tauri-storage';
 
 const rootReducer = combineReducers({
+  session: sessionReducer,
   settings: settingsReducer,
 });
 
@@ -21,6 +23,8 @@ const persistedReducer = persistReducer(
     key: 'root',
     version: 1,
     storage: tauriStorage,
+    // session state is ephemeral and must not survive app restarts
+    blacklist: ['session'],
   },
   rootReducer,
 );

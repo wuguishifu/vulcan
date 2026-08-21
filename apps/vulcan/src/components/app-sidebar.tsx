@@ -10,7 +10,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from '@/components/ui/sidebar';
-import { HomeIcon, PanelLeftIcon, SettingsIcon } from 'lucide-react';
+import { Code, HomeIcon, PanelLeftIcon, SettingsIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -49,6 +49,15 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  isActive={pathname === '/dev' || pathname.startsWith('/dev/')}
+                  render={<Link href="/dev" />}
+                >
+                  <Code />
+                  <span>Developer</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton render={<SidebarTrigger />}>
                   <PanelLeftIcon />
