@@ -22,6 +22,12 @@
 
 <!-- nx configuration end-->
 
+## Repo information
+
+- Developer dependencies should be added to the root level package.json
+- Production dependencies should be added to the pnpm-workspace.yaml catalog
+- When dependencies are added to apps or libs, use `catalog:` to prevent dependency duplication
+
 ## App information
 
 ### Vulcan
