@@ -30,8 +30,8 @@
     "src/**/*.tsx",
     "src/**/*.js",
     "src/**/*.jsx",
-    "../../apps/desktop/.next/types/**/*.ts",
-    "../../dist/apps/desktop/.next/types/**/*.ts",
+    "../../apps/vulcan/.next/types/**/*.ts",
+    "../../dist/apps/vulcan/.next/types/**/*.ts",
     "index.d.ts",
     "next-env.d.ts"
   ],

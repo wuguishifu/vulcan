@@ -1,7 +1,7 @@
 {
   "name": "Vulcan",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/desktop",
+  "sourceRoot": "apps/vulcan",
   "projectType": "application",
   "tags": ["scope:client"],
   "// targets": "to see all targets run: nx show project Vulcan --web",
