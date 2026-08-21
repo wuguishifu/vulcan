@@ -89,6 +89,10 @@ jobs:
             vulcan \
             ${{ needs.version.outputs.version }}
 
+      - name: fetch ffmpeg sidecar
+        shell: bash
+        run: ./apps/vulcan/src-tauri/binaries/fetch-ffmpeg.sh
+
       - name: build app bundle
         run: pnpm nx build:tauri vulcan --output-style=stream
 
