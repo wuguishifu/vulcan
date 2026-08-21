@@ -49,15 +49,19 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  isActive={pathname === '/dev' || pathname.startsWith('/dev/')}
-                  render={<Link href="/dev" />}
-                >
-                  <Code />
-                  <span>Developer</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              {process.env.NEXT_PUBLIC_SHOW_DEVELOPER_MENU === 'true' && (
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    isActive={
+                      pathname === '/dev' || pathname.startsWith('/dev/')
+                    }
+                    render={<Link href="/dev" />}
+                  >
+                    <Code />
+                    <span>Developer</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
               <SidebarMenuItem>
                 <SidebarMenuButton render={<SidebarTrigger />}>
                   <PanelLeftIcon />
