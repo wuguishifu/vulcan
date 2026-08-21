@@ -5,6 +5,7 @@
   "dependencies": {
     "@base-ui/react": "catalog:",
     "@reduxjs/toolkit": "catalog:",
+    "@tauri-apps/api": "catalog:",
     "@tauri-apps/plugin-store": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
