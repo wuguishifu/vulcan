@@ -1,13 +1,19 @@
 mod api_token;
+mod ffmpeg;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
   tauri::Builder::default()
     .plugin(tauri_plugin_store::Builder::default().build())
+    .plugin(tauri_plugin_shell::init())
+    .manage(ffmpeg::FfmpegJobs::default())
     .invoke_handler(tauri::generate_handler![
       api_token::set_api_token,
       api_token::delete_api_token,
-      api_token::has_api_token
+      api_token::has_api_token,
+      ffmpeg::ffmpeg_run,
+      ffmpeg::ffmpeg_kill,
+      ffmpeg::ffmpeg_running
     ])
     .setup(|app| {
       if cfg!(debug_assertions) {
