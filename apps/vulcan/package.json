@@ -3,8 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "next": "~16.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@base-ui/react": "*",
+    "class-variance-authority": "*",
+    "clsx": "*",
+    "lucide-react": "*",
+    "next": "*",
+    "react": "*",
+    "react-dom": "*",
+    "shadcn": "*",
+    "tailwind-merge": "*",
+    "tw-animate-css": "*"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "*",
+    "postcss": "*",
+    "tailwindcss": "*"
   }
 }
