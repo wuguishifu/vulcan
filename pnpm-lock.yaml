@@ -4,49 +4,51 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@base-ui/react':
+      specifier: ^1.7.0
+      version: 1.7.0
+    '@tailwindcss/postcss':
+      specifier: ^4.3.3
+      version: 4.3.3
+    class-variance-authority:
+      specifier: ^0.7.1
+      version: 0.7.1
+    clsx:
+      specifier: ^2.1.1
+      version: 2.1.1
+    lucide-react:
+      specifier: ^1.33.0
+      version: 1.33.0
+    next:
+      specifier: ~16.1.6
+      version: 16.1.7
+    postcss:
+      specifier: ^8.5.26
+      version: 8.5.26
+    react:
+      specifier: ^19.0.0
+      version: 19.2.8
+    react-dom:
+      specifier: ^19.0.0
+      version: 19.2.8
+    shadcn:
+      specifier: ^4.19.0
+      version: 4.19.0
+    tailwind-merge:
+      specifier: ^3.6.0
+      version: 3.6.0
+    tailwindcss:
+      specifier: ^4.3.3
+      version: 4.3.3
+    tw-animate-css:
+      specifier: ^1.4.0
+      version: 1.4.0
+
 importers:
 
   .:
-    dependencies:
-      '@base-ui/react':
-        specifier: ^1.7.0
-        version: 1.7.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@tailwindcss/postcss':
-        specifier: ^4.3.3
-        version: 4.3.3
-      class-variance-authority:
-        specifier: ^0.7.1
-        version: 0.7.1
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      lucide-react:
-        specifier: ^1.33.0
-        version: 1.33.0(react@19.2.8)
-      next:
-        specifier: ~16.1.6
-        version: 16.1.7(@babel/core@7.29.7)(babel-plugin-macros@3.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(sass@1.103.1)
-      postcss:
-        specifier: ^8.5.26
-        version: 8.5.26
-      react:
-        specifier: ^19.0.0
-        version: 19.2.8
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.2.8(react@19.2.8)
-      shadcn:
-        specifier: ^4.19.0
-        version: 4.19.0(babel-plugin-macros@3.1.0)(typescript@6.0.3)
-      tailwind-merge:
-        specifier: ^3.6.0
-        version: 3.6.0
-      tailwindcss:
-        specifier: ^4.3.3
-        version: 4.3.3
-      tw-animate-css:
-        specifier: ^1.4.0
-        version: 1.4.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.8.0
@@ -65,7 +67,7 @@ importers:
         version: 23.1.1(@babel/traverse@7.29.8)(@swc-node/register@1.11.1(@swc/core@1.15.8(@swc/helpers@0.5.18))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/cli@0.8.1(@swc/core@1.15.8(@swc/helpers@0.5.18))(chokidar@5.0.0))(@swc/core@1.15.8(@swc/helpers@0.5.18))(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.8(@swc/helpers@0.5.18))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.8(@swc/helpers@0.5.18)))
       '@nx/next':
         specifier: 23.1.1
-        version: 23.1.1(34c4a9d031cee5e8c2dc73047dfc5acf)
+        version: 23.1.1(945c9def4331a838147e7d77787bc8d8)
       '@swc-node/register':
         specifier: 1.11.1
         version: 1.11.1(@swc/core@1.15.8(@swc/helpers@0.5.18))(@swc/types@0.1.28)(typescript@6.0.3)
@@ -127,44 +129,44 @@ importers:
   apps/vulcan:
     dependencies:
       '@base-ui/react':
-        specifier: '*'
+        specifier: 'catalog:'
         version: 1.7.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       class-variance-authority:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 0.7.1
       clsx:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 2.1.1
       lucide-react:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 1.33.0(react@19.2.8)
       next:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 16.1.7(@babel/core@7.29.7)(babel-plugin-macros@3.1.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(sass@1.103.1)
       react:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 19.2.8
       react-dom:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 19.2.8(react@19.2.8)
       shadcn:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 4.19.0(babel-plugin-macros@3.1.0)(typescript@6.0.3)
       tailwind-merge:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 3.6.0
       tw-animate-css:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 1.4.0
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: '*'
+        specifier: 'catalog:'
         version: 4.3.3
       postcss:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 8.5.26
       tailwindcss:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 4.3.3
 
 packages:
@@ -7984,7 +7986,7 @@ snapshots:
       - verdaccio
       - webpack-cli
 
-  '@nx/next@23.1.1(34c4a9d031cee5e8c2dc73047dfc5acf)':
+  '@nx/next@23.1.1(945c9def4331a838147e7d77787bc8d8)':
     dependencies:
       '@babel/plugin-proposal-decorators': 7.29.7(@babel/core@7.29.7)
       '@nx/devkit': 23.1.1(nx@23.1.1(@swc-node/register@1.11.1(@swc/core@1.15.8(@swc/helpers@0.5.18))(@swc/types@0.1.28)(typescript@6.0.3))(@swc/core@1.15.8(@swc/helpers@0.5.18)))
