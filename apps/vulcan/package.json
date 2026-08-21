@@ -1,5 +1,5 @@
 {
-  "name": "@org/Vulcan",
+  "name": "vulcan",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
