@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const tabs = [
-  { title: 'Claude API token', url: '/settings/api-token' },
   { title: 'Transcription models', url: '/settings/transcription-models' },
+  { title: 'Claude API token', url: '/settings/api-token' },
 ];
 
 export default function SettingsLayout({
