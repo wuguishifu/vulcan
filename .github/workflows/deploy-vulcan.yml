@@ -93,6 +93,10 @@ jobs:
         shell: bash
         run: ./apps/vulcan/src-tauri/binaries/fetch-ffmpeg.sh
 
+      - name: build whisper-cli sidecar
+        shell: bash
+        run: ./apps/vulcan/src-tauri/binaries/fetch-whisper.sh
+
       - name: build app bundle
         run: pnpm nx build:tauri vulcan --output-style=stream
 
