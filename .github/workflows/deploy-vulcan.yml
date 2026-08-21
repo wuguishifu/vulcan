@@ -1,0 +1,102 @@
+name: Deploy Vulcan
+
+on:
+  workflow_dispatch:
+    inputs:
+      version-bump-type:
+        description: Version bump type
+        required: false
+        type: choice
+        default: patch
+        options:
+          - major
+          - minor
+          - patch
+      environment:
+        description: Environment to deploy to
+        required: false
+        type: choice
+        default: staging
+        options:
+          - production
+          - staging
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: bump version
+        id: version
+        run: |
+          ./scripts/versioning/version-bump.sh \
+            vulcan \
+            ${{ inputs.version-bump-type }}
+
+  build:
+    needs: version
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            platform: windows
+            artifacts: |
+              apps/vulcan/src-tauri/target/release/bundle/**/*.exe
+              apps/vulcan/src-tauri/target/release/bundle/**/*.msi
+
+          - os: macos-latest
+            platform: macos
+            artifacts: |
+              apps/vulcan/src-tauri/target/release/bundle/**/*.dmg
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: install pnpm deps
+        run: pnpm i
+
+      - name: setup rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: update app version
+        shell: bash
+        run: |
+          ./scripts/versioning/set-tauri-app-version.sh \
+            vulcan \
+            ${{ needs.version.outputs.version }}
+
+      - name: build app bundle
+        run: pnpm nx build:tauri vulcan --output-style=stream
+
+      - name: publish binary to github release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: vulcan-v${{ needs.version.outputs.version }}
+          name: vulcan build v${{ needs.version.outputs.version }}
+          files: ${{ matrix.artifacts }}
+          draft: false
+          prerelease: false
