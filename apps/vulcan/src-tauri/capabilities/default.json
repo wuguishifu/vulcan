@@ -3,5 +3,10 @@
   "identifier": "default",
   "description": "enables the default permissions",
   "windows": ["main"],
-  "permissions": ["core:default", "core:window:allow-destroy", "store:default"]
+  "permissions": [
+    "core:default",
+    "core:window:allow-destroy",
+    "store:default",
+    "dialog:default"
+  ]
 }

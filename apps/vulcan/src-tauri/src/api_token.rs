@@ -8,6 +8,15 @@ fn entry() -> Result<Entry, String> {
   Entry::new(SERVICE, ACCOUNT).map_err(|e| e.to_string())
 }
 
+/// Reads the token for Rust-side API calls. The token never crosses to JS.
+pub(crate) fn get_token() -> Result<String, String> {
+  match entry()?.get_password() {
+    Ok(token) => Ok(token),
+    Err(keyring::Error::NoEntry) => Err("no API token saved".into()),
+    Err(e) => Err(e.to_string()),
+  }
+}
+
 #[tauri::command]
 pub async fn set_api_token(token: String) -> Result<(), String> {
   if token.trim().is_empty() {

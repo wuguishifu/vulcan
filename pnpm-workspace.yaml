@@ -6,6 +6,7 @@ catalog:
   '@base-ui/react': ^1.7.0
   '@reduxjs/toolkit': ^2.9.0
   '@tauri-apps/api': ^2.9.0
+  '@tauri-apps/plugin-dialog': ^2.4.0
   '@tauri-apps/plugin-store': ^2.4.0
   '@tailwindcss/postcss': ^4.3.3
   class-variance-authority: ^0.7.1
